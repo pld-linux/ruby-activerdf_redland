@@ -10,7 +10,7 @@ URL:		http://activerdf.rubyforge.org
 BuildRequires:	rake
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	setup.rb = 3.4.1
-Requires:	redland-bindings-ruby
+Requires:	ruby-redland
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
