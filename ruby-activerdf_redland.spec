@@ -6,6 +6,7 @@ License:	Ruby's
 Group:		Development/Languages
 Source0:	http://gems.rubyforge.org/gems/activerdf_redland-%{version}.gem
 # Source0-md5:	c19344995e2a5e336dc3cb63205b1594
+Patch0:	%{name}-pathfix.patch
 URL:		http://activerdf.rubyforge.org
 BuildRequires:	rake
 BuildRequires:	rpmbuild(macros) >= 1.277
@@ -17,9 +18,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ActiveRDF adaptor for Redland bindings.
 
 %prep
-%setup -q -c -n activerdf-%{version}
+%setup -q -c -n %{name}-%{version}
 tar xzf data.tar.gz
 cp %{_datadir}/setup.rb .
+%patch0 -p1
 
 %build
 ruby setup.rb config \
